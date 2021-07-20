@@ -1,0 +1,191 @@
+<div class="card border-0">
+<span [ngSwitch]="imgid">
+<p *ngSwitchCase="20">
+  <img class="card-img-top" src="assets/slider (1).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="1">
+  <img class="card-img-top" src="assets/slider (2).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="6">
+  <img class="card-img-top" src="assets/slider (3).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="5">
+  <img class="card-img-top" src="assets/slider (4).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="2">
+  <img class="card-img-top" src="assets/slider (5).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="3">
+  <img class="card-img-top" src="assets/slider (6).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="4">
+  <img class="card-img-top" src="assets/slider (7).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchCase="18">
+  <img class="card-img-top" src="assets/slider (8).jpg" alt="image" height="390" width="100%">
+</p>
+<p *ngSwitchDefault>
+  <img class="card-img-top" src="assets/slider (8).jpg" alt="image" height="390" width="100%">
+</p>
+</span>
+ <div class="card-img-overlay d-flex align-items-center justify-content-center">
+     
+    </div>
+  </div>
+<div class="pxr">
+  <h3 class="text-center pt-3 " *ngFor="let nm of Category_name">{{nm.Category_name}} Country Research Reports</h3>
+    <section class="row m-1 p-0 ">
+        <div class="col-md-9">
+            <div class="my-4 rounded  row b  al font-weight-bold"  *ngFor="let aa of arr  | paginate:{itemsPerPage:10, currentPage:p }">
+              <div class="col-md-9 bg-white p-3 l shadow border">
+                <p (click)="send_id(this.aa.Report_id,this.aa.Url_path)">
+                  {{aa.Report_title}}. <span class="pl-4 light-gray"><i class="fa fa-image"></i> {{aa.Publish_date |date }} Report Code: {{aa.SKU}} <i class="fa fa-file-text"></i> {{aa.No_of_Pages}}</span>
+                </p>
+                 <a class="text-info" (click)="send_id(this.aa.Report_id,this.aa.Url_path)">Read More ..</a>           
+                    <button class="btn btn-p btn-sm b" (click)="send_id1(this.aa.Report_id)">BUY  REQUEST A SAMPLE</button>
+                    <button class="btn btn-p btn-sm  b" (click)="send_id6(this.aa.Report_id)">INQUIRE BEFORE BUY</button>
+                    
+                    
+              </div>
+              <div class="col-md-3 alert-secondary p-3 r shadow border">
+                <div class="form-check ">
+                  <input type="radio" name="a" class="form-check-input" value="4,566"> 1 To 5 User $4,566
+                  <div class="dropdown-divider"></div>
+                  <input type="radio" name="a" class="form-check-input" value="4,566">Enterprise  $4,566
+                  <div class="dropdown-divider"></div>
+                  <button class="btn btn-p b btn-sm ">Buy Now</button>
+                </div>
+              </div>
+            </div>
+
+            <pagination-controls (pageChange)="p = $event" class="p-3"></pagination-controls>
+            <div class=" p-5"></div>
+          </div>
+
+          <div class="col-md-3 ">
+            <div class=" al p-0 border m-0">
+              <div class=" btn-p rl py-3 text-center m-0"><b>Filter By</b></div>
+              <div class=" pl-3 font-weight-bold m-0 py-3"><b>By Country Name</b>
+              <div class="dropdown-divider"></div>
+               <input type="radio" name="s" class="mx-3"> India<br>
+               <input type="radio" name="s" class="mx-3"> Africa<br>
+               <input type="radio" name="s" class="mx-3"> Brazil<br>
+               <input type="radio" name="s" class="mx-3"> China<br>
+               <input type="radio" name="s" class="mx-3"> Vietnam<br>
+               <input type="radio" name="s" class="mx-3"> France<br>
+               <input type="radio" name="s" class="mx-3"> Germany<br>
+               <input type="radio" name="s" class="mx-3"> Ireland<br>
+               <input type="radio" name="s" class="mx-3"> Japan<br>
+               <input type="radio" name="s" class="mx-3"> Russia<br>
+               <input type="radio" name="s" class="mx-3"> Saudi Arabia<br>
+               <input type="radio" name="s" class="mx-3"> South Korea<br>
+               <input type="radio" name="s" class="mx-3"> United States<br>
+               <button class="btn btn-p b btn-sm ml-5 px-4 font-weight-bold">Submit</button>
+              </div>
+            </div>
+            <div class=" al p-0 border m-0 my-3">
+              <div class=" btn-p rl py-3 text-center m-0"><b>Latest Reports</b></div>
+              <div class="row shadow m-1" *ngFor="let a of aaa">
+                <div class="col-md-3 px-0">
+                  <img src="https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" alt="" width="100%" height="120">
+                </div>
+                <div class="col-md-9">
+                  <p>
+                    Oral Care/Oral Hygiene Market: Global Industry Analysis, Trends, Market Size and Forecasts up to 2023.
+                  </p>
+                  <button class="btn btn-p btn-sm  b">Read More</button>
+                  <button class="btn btn-p btn-sm  b">Sample Request</button>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-p btn-sm  b">View All</button>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!--  <section class="row m-1">
+        <div class="col-md-3 p-2  ">
+        <br><br>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-1 bg-warning active" data-toggle="pill" href="#home">All</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" >Automotive, Aerospace & Defence</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" > Agriculture & Agrochemical</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" > Consumer Goods & Packaging</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" > Chemicals & Specialty Materials</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" >Electronics , ICT & Semiconductors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" >Energy , Infrastructure and Mining</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" > Food & Beverage Industry</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn-arrow-right px-4 m-2 bg-warning" > Healthcare & Medical Devices</a>
+                </li>
+            
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content">
+                <div id="home" class=" tab-pane active"><br>
+                       <h3 class="text-center  " *ngFor="let nm of Category_name">{{nm.Category_name}} Country Research Reports</h3>
+                       
+                       <div class="card mb-1" *ngFor="let aa of arr  | paginate:{itemsPerPage:10, currentPage:p }">
+                           <div class="card-body text-justify">
+                               <h5><a href="">{{aa.Report_title}}.</a></h5>
+                               <p class="light-gray"><i class="fa fa-image"></i> {{aa.Publish_date}} Report Code: {{aa.SKU}} <i class="fa fa-file-text"></i> {{aa.No_of_Pages}}</p>
+                               <p>{{aa.Meta_description}}. </p>
+                               <button class="btn btn-outline-warning btn-sm" (click)="send_id(this.aa.Report_id)">Read More ..</button>
+
+                           </div>
+                       </div> 
+                       <pagination-controls (pageChange)="p = $event" class="float-right p-3"></pagination-controls>
+                       <div class=" p-5"></div>
+                       
+                       
+                     
+                </div>                               
+            </div>
+        </div>
+    </section> -->
+  </div>

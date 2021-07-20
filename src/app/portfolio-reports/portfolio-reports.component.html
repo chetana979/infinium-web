@@ -1,0 +1,76 @@
+<section class="row m-0 p-0 ">
+    <section class="col-md-4 btn-p text-white item-align-center m-0 center-center">
+        <h2 class=" text-center" style="font-size: 3rem;">Portfolio and FDI Reports</h2>
+    </section>
+    <section class="col-md-8 jumbo m-0 ">
+        <div class="py-5 px-2">
+            <p class="text-justify ">
+                <b>I</b>nfinium Global Research has launched investment and FDI reports to help its clients by providing to ready to use reports in order to take strategic decisions on expansion of their businesses. Investing in the right market at right time is a crucial factor that defines the success of the company in the international and highly competitive markets. The portfolio reports provide clear and in-depth analysis of the most lucrative and most promising markets in the world. Further, these reports focus on modes of entering into several country markets by emphasizing on the analysis of the factors conditions and studying the strategic expansion methods being used by companies operating in those markets. Moreover, the study about legal framework and policy guidelines will help the companies understand the role of governments and policies to enter a particular market.
+            </p>
+            <p class="text-justify">
+                The competitive nature of the international market forces the companies to have a clear idea about the targeted markets. These portfolio reports help companies to choose the right products to enter the right markets. Not just the ready reports, but you can now have an ample opportunity to customize your requirements to get a complete portfolio report on the desired market.
+            </p>
+        </div>
+    </section>
+</section>
+
+
+
+<!--delete-->
+<div class="row m-5">
+    <div class="col-md-9">
+        <div class="my-4 rounded  row b  al font-weight-bold"  *ngFor="let aa of arr  | paginate:{itemsPerPage:10, currentPage:p }">
+            <div class="col-md-9 bg-white p-3 l shadow border">
+              <p (click)="send_id(this.aa.id)">
+                {{aa.title}}. <span class="pl-4 light-gray"><i class="fa fa-image"></i> {{aa.publish_date |date }} Report Code: {{aa.report_code}} <i class="fa fa-file-text"></i> {{aa.pages}}</span>
+              </p>
+               <a class="text-info" (click)="send_id(this.aa.id)">Read More ..</a>           
+                  <button class="btn btn-p btn-sm b" (click)="send_id1(this.aa.id)">BUY REQUEST A SAMPLE</button>
+                  <button class="btn btn-p btn-sm  b">INQUIRE BEFORE BUY</button>
+                  
+                  
+            </div>
+            <div class="col-md-3 alert-secondary p-3 r shadow border">
+              <div class="form-check ">
+                <input type="radio" name="a" class="form-check-input" value="4,566"> 1 To 5 User $4,566
+                <div class="dropdown-divider"></div>
+                <input type="radio" name="a" class="form-check-input" value="4,566">Enterprise  $4,566
+                <div class="dropdown-divider"></div>
+                <button class="btn btn-p b btn-sm ">Buy Now</button>
+              </div>
+            </div>
+          </div>
+
+          <pagination-controls (pageChange)="p = $event" class="p-3"></pagination-controls>
+          <div class=" p-5"></div>
+    </div>
+    <div class="col-md-3">
+        <div class=" al p-0 border m-0 my-3">
+            <div class=" btn-p rl py-3 text-center m-0"><b>Latest Reports</b></div>
+            <div class="row shadow m-1" *ngFor="let a of aaa">
+              <div class="col-md-3 px-0">
+                <img src="https://www.mswordcoverpages.com/wp-content/uploads/2018/10/Book-cover-page-3-CRC.png" alt="" width="100%" height="120">
+              </div>
+              <div class="col-md-9">
+                <p>
+                  Oral Care/Oral Hygiene Market: Global Industry Analysis, Trends, Market Size and Forecasts up to 2023.
+                </p>
+                <button class="btn btn-p btn-sm  b">Read More</button>
+                <button class="btn btn-p btn-sm  b">Sample Request</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-p btn-sm  b">View All</button>
+            </div>
+          </div>
+    </div>
+</div>
+   <!--delete-->
+
+
+
+
+
+
+
+   

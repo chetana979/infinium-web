@@ -1,0 +1,219 @@
+<section *ngFor="let ff of Req_id" class="p-0">
+  <div class=" " >
+    <div class="p-5 bg-blue-trn">
+      <h2 class="text-center text-white ">{{formTitle}} </h2>
+    </div>
+    <section class="container " >
+      <a onclick="history.back()"   class="btn   btn-light border border-danger mb-3 "><i class="fa fa-long-arrow-left"></i> back To Report </a>
+
+      <div class="pt-2">
+        <h4 id="title">{{ff.title}}</h4>
+      </div>
+      <div class="">
+         <div class="">
+          <!-- <div class="btn-group btn-group-md mx-2">
+            <a href="" class="btn font-weight-bolder ">Request Sample </a>
+            <a href="" class="btn btn-top">
+              <i class="fa fa-file-text-o"></i>
+            </a>
+          </div>
+          <div class="btn-group btn-group-md mx-2">
+            <a href="" class="btn font-weight-bolder ">Enquiry Before Buying</a>
+            <span class="btn btn-top ">
+              <i class="fa fa-exclamation-circle"></i>
+            </span>
+          </div> -->
+          <div class="">
+            <span class="pr-2"><b> Category</b> : {{ff.category}}</span>
+            <span class="px-2"><b> Published :</b> {{ff.publish_date}}</span>
+            <span class="px-2"><b> Rep Id :</b> {{ff.id}}</span>
+            <span class="px-2"><b> Status :</b> {{ff.statu_flag}}</span>
+           
+            
+          </div>
+         </div>
+       </div>
+      
+      </section>
+     
+      
+     
+      <section class="container p-0">
+        
+        <div class="row mx-1 ">
+        <!--   <div class="col-md-4 bg-warning shadow-lg align-items-center d-flex justify-content-center">
+              <img src="assets/clients/form_png.png" alt="d" width="70%" height="70%">
+          </div> -->
+          
+          <div class="col-md-8 jumbotron shadow ">
+              <h3 class="text-center pb-2">{{formTitle}} </h3>
+            <p class="text-center">Please fill the form , We will contact you within 24 hours .</p>
+              <hr class="bg-danger">
+            <form method="post" role="form" [formGroup]="Requestform" (ngSubmit)="onSubmit()">
+              <div class="row ">
+                <div class="col-md-12">
+                  <input type="hidden"  formControlName="title" [(ngModel)]="ff.title" class="form-control">
+                </div>
+                <div class=" col-md-6 ">
+                <div class="input-group my-3">
+                  <div class="input-group-prepend  border-right-0 ">
+                    <span class="input-group-text bg-white">
+                      <i class="fa fa-user"></i>
+                    </span>
+                  </div>
+                  <input type="text" formControlName="name" class="form-control  border-left-0" [ngClass]="{ 'is-invalid': submitted && f.name.errors }"  placeholder="Enter Name..."/>
+                  <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                      <div *ngIf="f.name.errors.required">Name is required</div>
+                  </div>  
+                </div>    
+                </div>
+                <div class=" col-md-6 ">
+                  <div class="input-group my-3">
+                    <div class="input-group-prepend  border-right-0 ">
+                      <span class="input-group-text bg-white">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                    </div>
+                  <input type="email" formControlName="email" class="form-control border-left-0 " [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  placeholder="Enter Email..."/>
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                  </div>
+                </div>
+                </div>
+                <div class=" col-md-6 ">
+                  <div class="input-group">
+                    <div class="input-group-prepend  border-right-0 ">
+                      <span class="input-group-text bg-white">
+                        <i class="fa fa-building"></i>
+                      </span>
+                    </div>
+                   <input type="text" formControlName="company" class="form-control border-left-0 " [ngClass]="{ 'is-invalid': submitted && f.company.errors }"  placeholder="Company Name..."/>
+                  <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                      <div *ngIf="f.company.errors.required">Company is required</div>
+                  </div>
+                </div>
+                </div>
+                <div class=" col-md-6 form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend  border-right-0 ">
+                      <span class="input-group-text bg-white">
+                        <i class="fa fa-globe"></i>
+                      </span>
+                    </div>
+                  <select class="form-control border-left-0" formControlName="country"   [ngClass]="{ 'is-invalid': submitted && f.country.errors }" placeholder="Select your Category">
+                    <option value="" selected>Select Country  </option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="France">France</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Chain">Chain</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Japan">Japan</option>
+                  </select>
+                  <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country is required</div>
+                </div>
+                </div>
+                </div>
+                  <div class="col-md-6 ">
+                    <div class="input-group">
+                      <div class="input-group-prepend  border-right-0 ">
+                        <span class="input-group-text bg-white">
+                          <i class="fa fa-phone"></i>
+                        </span>
+                      </div>
+                    <input type="tel" formControlName="contact" class="form-control border-left-0" [ngClass]="{ 'is-invalid': submitted && f.contact.errors }"  placeholder="Contact No..."/>
+                    <div *ngIf="submitted && f.contact.errors" class="invalid-feedback">
+                        <div *ngIf="f.contact.errors.required">Contact is required</div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <div class="input-group-prepend  border-right-0 ">
+                          <span class="input-group-text bg-white">
+                            <i class="fa fa-briefcase"></i>
+                          </span>
+                        </div>
+                      <input type="text" formControlName="profession" class="form-control border-left-0" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }"  placeholder="Enter Profession ..."/>
+                      <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+                          <div *ngIf="f.profession.errors.required">Profession is required</div>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="">
+                  <div class="input-group my-3">
+                    <div class="input-group-prepend  border-right-0 pt-0">
+                      <span class="input-group-text bg-white" style="align-items: flex-start;">
+                        <i class="fa fa-whatsapp"></i>
+                      </span>
+                    </div>
+                  <textarea formControlName="message" class="form-control border-left-0" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"  placeholder="Enter  Message..." rows="3" ></textarea>
+                  <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                    <div *ngIf="f.message.errors.required">Message is required</div>
+                   </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 form-group">
+                      <div class="input-group m-3">
+                        <input type="text" class="form-control" value="4243" readonly>
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-refresh"></i></span>
+                       </div>
+                     </div>
+                    </div>
+                    <div class="col-md-9 form-group">
+                      <div class="input-group m-3">
+                        <input type="text" class="form-control" placeholder="Enter Captacher Code">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                       </div>
+                    
+                    </div>
+                </div>
+                <div class=" text-center col-md-12">
+                  <input type="submit" value="Submit" class="btn   text-white px-3 m-1">
+                
+                  
+                  
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            
+     <div class=" al p-0 border m-0 mt-3">
+      <div class=" btn-p rl py-3 text-center m-0"><b>CHOOSE LICENCE TYPE</b></div>
+      <div class=" font-weight-bold m-0 py-3">
+        <table class="table table-striped m-0">
+          <tbody>
+            <tr>
+              <td><input type="radio" name="s" class="mx-3"> <b>1 to 5 User </b></td>
+              <td><b class="text-success"> $ 4,345</b></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="s" class="mx-3"> <b>Enterprise </b></td>
+              <td><b class="text-success"> $ 7,345</b></td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="s" class="mx-3"> <b>Data Sheet </b></td>
+              <td><b class="text-success"> $ 2,345</b></td>
+            </tr> 
+          </tbody>
+        </table>
+
+        <div class="text-center">
+          <a class="btn btn-p  btn-sm ml-2 px-4 font-weight-bold">Buy Now</a>
+    
+          <a class="btn btn-p  btn-sm ml-2 px-4 font-weight-bold">Inquiry Before Buying</a>
+        </div>  
+      </div>
+    </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+</section>

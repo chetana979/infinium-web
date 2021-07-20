@@ -1,0 +1,13 @@
+.b{border-radius: 20px;}
+  	.l{border-top-left-radius: 30px;border-bottom-left-radius: 30px;}
+  	.r{border-top-right-radius: 30px;border-bottom-right-radius: 30px;}
+    .al{border-radius: 30px;}
+    .rl{border-top-left-radius: 20px;border-top-right-radius: 20px;}
+    .btn-p{background-color: rgb(44, 126, 172); font-weight: 500; color: white; margin: 6px;}
+    .pxr{
+        padding:  0px 50px;
+    }
+    .ngx-pagination a, .ngx-pagination button {
+      box-shadow: 3px 3px 3px lightgrey !important;
+      margin: 5px;
+      border-radius: 4px;}  

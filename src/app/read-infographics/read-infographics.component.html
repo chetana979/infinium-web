@@ -1,0 +1,23 @@
+<section class=" m-1" *ngFor="let aa of all_data">
+    <div class="container ">
+        <h4 class="pt-5 pb-2 ">{{aa.title}}</h4>
+    </div>
+    <div class="row m-1" >
+        <div class="col-md-2">
+            <a class="btn btn-white deep2 shadow  btn-outline-warning btn-block" (click)="send_id1(this.aa.id)">Request Sample</a>  
+            <a class="btn btn-white deep2 shadow  btn-outline-warning btn-block" (click)="send_id2(this.aa.id)">Request Detailed TOC</a>  
+            <a class="btn btn-white deep2 shadow  btn-outline-warning btn-block" (click)="send_id3(this.aa.id)">Customization Request</a>
+        </div>    
+        <div class="col-md-8">
+            <img src="{{aa.image_path}}" alt="img" class="mb-5" width="100%">
+            <div class="pt-2">
+              <p class="light-gray">
+                <span>By Infinium Global Research</span>
+                <i class="fa fa-calendar px-3"></i>
+                <span>{{aa.created_at | date}}</span>
+              </p>
+                <div innerHTML="{{aa.description}}"></div>
+            </div>
+        </div>
+    </div>  
+</section>
